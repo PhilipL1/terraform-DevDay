@@ -33,9 +33,9 @@ resource "aws_instance" "webserver" {
 }
 
 resource "aws_lb_target_group_attachment" "instance_attach" {
-  target_group_arn = var.target_group
-  target_id        = aws_instance.webserver.id
-  port             = 80
+  target_id        = aws_instance.webserver.id # i want this machine above  
+  target_group_arn = var.target_group # to be connected to this target group
+  port             = 80 #  which is listening on port 80 
 }
 
 
